@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "e94ed637-6e57-42f2-b709-8e9c3da77e8b",
+		"name": "flask_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15549832"
+	},
+	"item": [
+		{
+			"name": "click",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJraW1rYW5vdnNreSIsInJvbGUiOltdLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIiwidXNlcl9hZ2VudCI6Ik1vemlsbGEvNS4wIChYMTE7IExpbnV4IHg4Nl82NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNS4wLjAuMCBTYWZhcmkvNTM3LjM2IiwidHlwZSI6ImFjY2VzcyIsImV4cCI6MjcxOTI2MjEwN30.7xNUV2OnHl50rF6GPh1X9wQplxtzFFkxaA3GcXD_EEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"d4e1f5c8-1c4a-4c18-8f75-6e12d6c1a1b6\",\n  \"event_dt\": \"2023-07-17T14:48:00\",\n  \"clicked_element_id\": \"a8f5d6c9-9c6b-4b98-8d21-1e9a6f2b3c4d\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/click",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"click"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJraW1rYW5vdnNreSIsInJvbGUiOltdLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIiwidXNlcl9hZ2VudCI6Ik1vemlsbGEvNS4wIChYMTE7IExpbnV4IHg4Nl82NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNS4wLjAuMCBTYWZhcmkvNTM3LjM2IiwidHlwZSI6ImFjY2VzcyIsImV4cCI6MjcxOTI2MjEwN30.7xNUV2OnHl50rF6GPh1X9wQplxtzFFkxaA3GcXD_EEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"e5f2c3d1-2d5a-4b28-8d63-7f12d7c3b2d1\",\n  \"event_dt\": \"2023-07-17T15:00:00\",\n  \"event_type\": \"load\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/view",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quality_change",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJraW1rYW5vdnNreSIsInJvbGUiOltdLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIiwidXNlcl9hZ2VudCI6Ik1vemlsbGEvNS4wIChYMTE7IExpbnV4IHg4Nl82NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNS4wLjAuMCBTYWZhcmkvNTM3LjM2IiwidHlwZSI6ImFjY2VzcyIsImV4cCI6MjcxOTI2MjEwN30.7xNUV2OnHl50rF6GPh1X9wQplxtzFFkxaA3GcXD_EEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"f6d3c4e2-3d6b-4c38-9d74-8g23d8c4b3e2\",\n  \"event_dt\": \"2023-07-17T15:15:00\",\n  \"movie_id\": \"b9d6e7f1-4d8a-4d68-9d85-9h34d9d5c4f3\",\n  \"current_quality\": 720,\n  \"chosen_quality\": 1080\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/quality_change",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quality_change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "video_progress",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJraW1rYW5vdnNreSIsInJvbGUiOltdLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIiwidXNlcl9hZ2VudCI6Ik1vemlsbGEvNS4wIChYMTE7IExpbnV4IHg4Nl82NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNS4wLjAuMCBTYWZhcmkvNTM3LjM2IiwidHlwZSI6ImFjY2VzcyIsImV4cCI6MjcxOTI2MjEwN30.7xNUV2OnHl50rF6GPh1X9wQplxtzFFkxaA3GcXD_EEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"g7e4d5f3-4e7c-4d48-9e86-0i45e0d6c5f4\",\n  \"event_dt\": \"2023-07-17T15:30:00\",\n  \"movie_id\": \"c0e7f8g2-5e9b-4d58-9f97-1j56e1d7c5g6\",\n  \"seconds\": 120,\n  \"is_stopped\": false\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/video_progress",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"video_progress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJraW1rYW5vdnNreSIsInJvbGUiOltdLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIiwidXNlcl9hZ2VudCI6Ik1vemlsbGEvNS4wIChYMTE7IExpbnV4IHg4Nl82NCkgQXBwbGVXZWJLaXQvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lLzEyNS4wLjAuMCBTYWZhcmkvNTM3LjM2IiwidHlwZSI6ImFjY2VzcyIsImV4cCI6MjcxOTI2MjEwN30.7xNUV2OnHl50rF6GPh1X9wQplxtzFFkxaA3GcXD_EEg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": \"h8f5g6h4-5f8c-4e58-0f98-2k67e2d8c6g7\",\n  \"event_dt\": \"2023-07-17T15:45:00\",\n  \"is_genre_filtered\": true,\n  \"is_rating_filtered\": false,\n  \"is_actor_filtered\": true\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/query",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"query"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

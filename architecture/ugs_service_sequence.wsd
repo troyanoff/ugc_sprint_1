@@ -1,0 +1,34 @@
+@startuml sprint№8
+
+participant "User Browser" as user_browser
+participant "Flask API" as flask
+database "Kafka" as kafka
+participant "ETL Service" as etl
+database "ClickHouse" as clickhouse
+
+user_browser -> flask: Interacts with
+user_browser -> flask: Authenticates and sends events
+
+flask -> kafka: Send user events
+etl <-o kafka: Poll user events
+etl -> clickhouse: Load transformed data
+
+note right of flask
+  Handles user requests:
+  - Authentication
+  - Event tracking
+  - Sends events to Kafka
+end note
+
+note right of kafka
+  - Manages user event streams
+  - Provides reliable message delivery
+end note
+
+note right of etl
+  - Extracts events from Kafka
+  - Transforms data
+  - Loads data into ClickHouse
+end note
+
+@enduml

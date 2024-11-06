@@ -1,0 +1,54 @@
+@startuml all_services
+
+component [Redis]
+
+package "Admin Panel" {
+    actor Managers
+    interface Nginx_1
+    Managers -> Nginx_1 
+    Nginx_1 - [Django Admin]
+}
+
+database "Postgres" {
+    component [PG]
+}
+
+package "Full Text Search" {
+    component [Elastic Search]
+}
+
+actor User
+package "Async API" {
+    interface Nginx_2
+    component [FastAPI]
+    User -> Nginx_2
+    Nginx_2 -> FastAPI
+    [FastAPI] <-right-> [Redis]
+    [FastAPI] <-up-> [Elastic Search]
+}
+
+package "Auth" {
+    component [Auth FastAPI]
+    [Auth FastAPI] -> [Redis]
+}
+
+package "UGC" {
+    interface UserSPA
+    component [FlaskApp]
+    component [Kafka]
+    component [ETL]
+    component [ClickHouse]
+    User ---> UserSPA
+    UserSPA -> FlaskApp
+    FlaskApp -> Kafka
+    Kafka -> ETL
+    ETL -> ClickHouse
+}
+
+
+[FastAPI] <--> [Auth FastAPI]
+[Django Admin] --> [PG]
+[PG] -right-> [Elastic Search]
+
+
+@enduml

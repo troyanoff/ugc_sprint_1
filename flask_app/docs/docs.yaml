@@ -1,0 +1,108 @@
+security:
+- BearerAuth: []
+paths:
+  /api/{action}:
+    post:
+      summary: Log user action
+      description: Endpoint to log user actions.
+      parameters:
+      - in: path
+        name: action
+        description: Action
+        schema:
+          type: string
+          enum:
+          - click
+          - view
+          - quality_change
+          - video_progress
+          - query
+        required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LogAction'
+      responses:
+        '200':
+          description: Action logged successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: Click logged
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: Invalid action
+        '422':
+          description: Failed authorization
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                    example: Invalid token
+      security:
+      - BearerAuth: []
+  /docs/dist/{filename}: {}
+  /docs/{path}: {}
+  /: {}
+  /health: {}
+  /test_kafka: {}
+  /swagger: {}
+info:
+  title: ugc-sprint-1
+  version: 1.0.0
+openapi: 3.0.3
+components:
+  schemas:
+    InputAction:
+      type: object
+      properties:
+        action:
+          type: string
+          enum:
+          - click
+          - view
+          - quality_change
+          - video_progress
+          - query
+          description: Action
+      required:
+      - action
+    LogAction:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'Action''s id '
+        user_id:
+          type: string
+          description: User's id
+        event_dt:
+          type: string
+          format: date-time
+          description: Datetime of action
+      required:
+      - event_dt
+      - id
+      - user_id
+      additionalProperties: true
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
